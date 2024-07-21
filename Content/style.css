@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+
+.container {
+    width:30rem;
+}
+
+h1 {
+  padding: 25px;
+}
+
+.header button {
+  position: absolute;
+  right: 18%;
+  margin-top: -30px;
+}
+
+.header i {
+  font-size: 22px;
+}
+
+.listaTarefas {
+    margin-top: 3rem;
+    width: 100%; 
+    max-width: 21.5rem; 
+}
+
+.textInsert {
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    margin-right: 5px;
+    box-sizing: border-box;
+    width: 13.5rem; 
+}
+.divInsert {
+    padding: 10px;
+    background-color: rgb(134, 95, 185);
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 6px 5px 10px 0px;
+    position:relative;
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.bx-plus {
+    font-size: 20px;
+    background-color: rgb(56, 56, 94);
+    border-radius: 25%;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    position:absolute;
+    left:16.5rem;
+    top:8px;
+}
+
+.header button {
+    position: absolute;
+    right: 18%;
+    margin-right: 11rem;
+}
+
+.divLi {
+    margin-top: 20px;
+    padding: 10px;
+    background: lightgray;
+    border-radius: 10px;
+    box-shadow: 6px 5px 10px 0px gray;
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    position: relative;
+}
+
+.bxs-trash {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    outline: none;
+    cursor: pointer;
+}
+
+.bx.bxs-trash-alt {
+    color:darkred;
+    position:relative;
+    right:5.5rem;
+}
+
+.bxs-edit {
+    position: absolute;
+    top: 12px;
+    right: 2.5rem;
+}
+
+
+.task-actions a {
+    margin-right: 10px; 
+    font-size: 20px; 
+    color: inherit; 
+    text-decoration: none; 
+}
+
+.bx.bx-save {
+    font-size: 20px;
+    position:absolute;
+    right:22.5px;
+    top:14px;
+}
+
+.descricao-texo {
+    flex: 1;
+    overflow-wrap: break-word;
+    margin-right: 10px;
+    word-wrap: break-word; 
+    white-space: normal; 
+}
+
+
+.divLi span {
+    color: dimgray;
+}
+
+.divLi input {
+    position:absolute;
+    left:-15px;
+    top:15px;
+    width: 5rem;
+    outline: none;
+    background-color:green;
+}
+
+.textInsert-TextBox.check-box {
+    width:3.5rem;
+    position:absolute;
+    top:18px;
+}
+
+
+.divLi #descricao {
+    padding-left: 3.1rem;
+    color: dimgray;
+    justify-content: space-between;
+}
+
+.divLi i {
+  font-size: 22px;
+  color: brown;
+}
+
+li {
+  list-style-type: none;
+}
+
+.risco-linha {
+  text-decoration: line-through;
+}
+
+.Textolabel label {
+    position:relative;
+    right:-0.5rem;
+    top:2px;
+}
+
+.imagem {
+    position:absolute;
+    left:1rem;
+    top:1rem;
+}
