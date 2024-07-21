@@ -1,0 +1,20 @@
+﻿@model To_Do_List.Models.Base
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Deletar Item</h2>
+
+<div class="divLi">
+    <h4>@Html.DisplayFor(model => model.Descricao)</h4>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.Id)
+            <button type="submit" class="bx bxs-trash"> Delete</button>
+            @Html.ActionLink("Voltar", "Index", null, new { @class = "bx bx-arrow-back" })
+        }
+    </div>
+</div>

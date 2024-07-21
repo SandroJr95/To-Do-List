@@ -1,0 +1,88 @@
+﻿@model IEnumerable<To_Do_List.Models.Base>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="imagem">
+    <img src="https://www.mtp.es/wp-content/uploads/2021/03/logo-mtp.svg"
+         alt="LogoMTP"
+         width="200px" />
+</div>
+<div class="listaTarefas">
+    <div class="header">
+        <h1>Lista de Tarefas</h1>
+        <button onclick="deleteAllItems()"><i class="bx bxs-trash-alt"></i></button>
+    </div>
+    <hr />
+    <br />
+    <div class="divInsert">
+        @using (Html.BeginForm("Create", "List", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <input class="textInsert" type="text" name="Descricao" placeholder="Nova tarefa" maxlength="25" />
+            <button><i class="bx bx-plus"></i></button>
+        }
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="divLi" id="item-@item.Id">
+            <ul>
+                <li>
+                    <span id="descricao">@Html.DisplayFor(modelItem => item.Descricao)</span>
+                    <span>@Html.DisplayFor(modelItem => item.Status)</span>
+                    <span class="task-actions">
+                        <a href="@Url.Action("Edit", "List", new { id = item.Id })" class="bx bxs-edit"></a>
+                        <a href="javascript:void(0);" onclick="deleteItem(@item.Id)" class="bx bxs-trash"></a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    function deleteItem(id) {
+
+            $.ajax({
+                url: '@Url.Action("Delete", "List")',
+                type: 'POST',
+                data: { id: id },
+                success: function (result) {
+                    if (result.success) {
+                        $('#item-' + id).remove();
+                    } else {
+                        alert(result.message || 'Erro ao deletar o item.');
+                    }
+                },
+                error: function () {
+                    alert('Erro ao deletar o item.');
+                }
+            });
+        }
+
+    function deleteAllItems() {
+            if (confirm("Tem certeza que deseja deletar todos os itens?")) {
+                $.ajax({
+                    url: '@Url.Action("DeletarTodos", "List")',
+                    type: 'POST',
+                    success: function (result) {
+                        if (result.success) {
+                            $('.divLi').remove();
+                        } else {
+                            alert(result.message || 'Erro ao deletar todos os itens.');
+                        }
+                    },
+                    error: function () {
+                        alert('Erro ao deletar todos os itens.');
+                    }
+                });
+            }
+        }
+    </script>
+}
+
+

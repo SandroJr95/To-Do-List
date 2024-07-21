@@ -1,0 +1,26 @@
+﻿@model To_Do_List.Models.Base
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Id)
+    <div class="divInsert">
+        <div>
+            @Html.LabelFor(model => model.Descricao)
+            @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "textInsert" } })
+        </div>
+        <div class="Textolabel">
+            @Html.LabelFor(model => model.Status)
+            @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "textInsert-TextBox" } })
+        </div>
+        <div>
+            <button type="submit" class="bx bx-save"></button>
+        </div>
+    </div>
+}

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <!-- Referências aos arquivos CSS globais -->
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <!-- CSS personalizado -->
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Renderiza o conteúdo específico de cada página -->
+    <div class="container">
+        @RenderBody()
+    </div>
+    <!-- Referências aos arquivos JavaScript globais -->
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/app.js"></script>
+    <!-- JS personalizado -->
+    <script src="~/Scripts/index.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
