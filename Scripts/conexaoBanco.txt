@@ -1,0 +1,21 @@
+## Configuração do Banco de Dados
+
+Banco Criado: EntidadeBase
+
+Propriedades do banco:
+Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=EmpresaDb;Integrated Security=True;Pooling=False;Encrypt=True;Trust Server Certificate=False
+
+Tabelas:
+
+CREATE TABLE [dbo].[Bases] (
+    [Id]        INT            IDENTITY (1, 1) NOT NULL,
+    [Descricao] NVARCHAR (MAX) NULL,
+    [Status]    BIT            NOT NULL,
+    CONSTRAINT [PK_dbo.Bases] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+Conexão de String: Ajustar conforme banco criado no servidor local. Caso o banco seja criado com as nomenclaturas acima, não será preciso ajustar.
+
+<connectionStrings>
+  <add name="EntidadeBase" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=Empresadb;Integrated Security=True" providerName="System.Data.SqlClient" />
+</connectionStrings>
